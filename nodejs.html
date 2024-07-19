@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="nodejs.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Add Hammer.js library for swipe functionality -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+
+<div class="nodejs-maindiv">
+    <div class="container nodejs-main-container">
+        <h2 class=" nodejs-developers-heading">Choose From Our Pool of <span
+                class="nodejs-developers-heading-span">Flutter Developers</span></h2>
+        <ul class="nav nav mt-4 nodejs-ul" id="nodejs-developerTabs">
+            <li class="nav-item">
+                <a class="nav-link active nodejs-nav-link" href="#" data-role="all">All</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nodejs-nav-link" href="#" data-role="React JS Developer">React JS Developer</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nodejs-nav-link" href="#" data-role="Front-end Developer">Front-end Developer</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nodejs-nav-link" href="#" data-role="UI/UX Designer">UI/UX Designer</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nodejs-nav-link" href="#" data-role="AWS Developer">AWS Developer</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nodejs-nav-link" href="#" data-role="Backend Developer">Backend Developer</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nodejs-nav-link" href="#" data-role="iOS Developer">iOS Developer</a>
+            </li>
+        </ul>
+        <div class="row mt-3">
+            <div class="col-md-4 main-list-group">
+                <div class="list-group" id="nodejs-developerList">
+                    <!-- Developer items will be inserted here by JavaScript -->
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card nodejs-card" id="nodejs-developerDetails">
+                    <!-- Developer details will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const developers = [
+                {
+                    name: "Mizara Mona",
+                    title: "React Senior Developer",
+                    location: "Bogotá, Colombia",
+                    experience: "6+ year experience",
+                    expertise: ["React", "Node JS", "AWS", "Vue"],
+                    description: "Mizara is a React JS Developer is a developer or engineer who can build both the front end and the back end of a website. The front end (the parts of a website a user sees and interacts with) and the back end (the behind-the-scenes data storage and processing) require different skill sets. Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut   modi qui libero laborum ab omnis magnam. dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. Est deserunt animi qui pariatur atque non nisi sint. Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut   modi qui libero laborum ab omnis magnam. Mizara is a React JS Developer is a developer or engineer who can build both the front end and the back end of a website.",
+                    image: "nodejs-images/developer1.png"
+                },
+                {
+                    name: "Merin Thomas",
+                    title: "Front-end Developer",
+                    location: "New York, USA",
+                    experience: "4+ year experience",
+                    expertise: ["HTML", "CSS", "JavaScript", "React"],
+                    description: "Mizara is a React JS Developer is a developer or engineer who can build both the front end and the back end of a website. The front end (the parts of a website a user sees and interacts with) and the back end (the behind-the-scenes data storage and processing) require different skill sets. Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut   modi qui libero laborum ab omnis magnam. dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. Est deserunt animi qui pariatur atque non nisi sint. Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut   modi qui libero laborum ab omnis magnam. Mizara is a React JS Developer is a developer or engineer who can build both the front end and the back end of a website.",
+                    image: "nodejs-images/developer2.png"
+                },
+                {
+                    name: "Mark Christopher",
+                    title: "React JS Developer",
+                    location: "San Francisco, USA",
+                    experience: "5+ year experience",
+                    expertise: ["React", "Redux", "JavaScript"],
+                    description: "Mizara is a React JS Developer is a developer or engineer who can build both the front end and the back end of a website. The front end (the parts of a website a user sees and interacts with) and the back end (the behind-the-scenes data storage and processing) require different skill sets. Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut   modi qui libero laborum ab omnis magnam. dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. Est deserunt animi qui pariatur atque non nisi sint. Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut   modi qui libero laborum ab omnis magnam. Mizara is a React JS Developer is a developer or engineer who can build both the front end and the back end of a website.",
+                    image: "nodejs-images/developer3.png"
+                },
+                {
+                    name: "Kington Max",
+                    title: "React Technical Lead",
+                    location: "London, UK",
+                    experience: "7+ year experience",
+                    expertise: ["React", "Node JS", "GraphQL"],
+                    description: "Mizara is a React JS Developer is a developer or engineer who can build both the front end and the back end of a website. The front end (the parts of a website a user sees and interacts with) and the back end (the behind-the-scenes data storage and processing) require different skill sets. Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut   modi qui libero laborum ab omnis magnam. dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. Est deserunt animi qui pariatur atque non nisi sint. Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut   modi qui libero laborum ab omnis magnam. Mizara is a React JS Developer is a developer or engineer who can build both the front end and the back end of a website.",
+                    image: "nodejs-images/developer4.png"
+                },
+                {
+                    name: "Jerome Bell",
+                    title: "iOS Developer",
+                    location: "Toronto, Canada",
+                    experience: "3+ year experience",
+                    expertise: ["Swift", "Objective-C", "iOS"],
+                    description: "Mizara is a React JS Developer is a developer or engineer who can build both the front end and the back end of a website. The front end (the parts of a website a user sees and interacts with) and the back end (the behind-the-scenes data storage and processing) require different skill sets. Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut   modi qui libero laborum ab omnis magnam. dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. Est deserunt animi qui pariatur atque non nisi sint. Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut   modi qui libero laborum ab omnis magnam. Mizara is a React JS Developer is a developer or engineer who can build both the front end and the back end of a website.",
+                    image: "nodejs-images/developer5.png"
+                },
+                {
+                    name: "Alex Johnson",
+                    title: "UI/UX Designer",
+                    location: "Los Angeles, USA",
+                    experience: "5+ year experience",
+                    expertise: ["Sketch", "Figma", "Adobe XD"],
+                    description: "Mizara is a React JS Developer is a developer or engineer who can build both the front end and the back end of a website. The front end (the parts of a website a user sees and interacts with) and the back end (the behind-the-scenes data storage and processing) require different skill sets. Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut   modi qui libero laborum ab omnis magnam. dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. Est deserunt animi qui pariatur atque non nisi sint. Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut   modi qui libero laborum ab omnis magnam. Mizara is a React JS Developer is a developer or engineer who can build both the front end and the back end of a website.",
+                    image: "nodejs-images/developer2.png"
+                },
+                {
+                    name: "Sarah Williams",
+                    title: "AWS Developer",
+                    location: "Seattle, USA",
+                    experience: "6+ year experience",
+                    expertise: ["AWS", "DevOps", "CloudFormation"],
+                    description: "Mizara is a React JS Developer is a developer or engineer who can build both the front end and the back end of a website. The front end (the parts of a website a user sees and interacts with) and the back end (the behind-the-scenes data storage and processing) require different skill sets. Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut   modi qui libero laborum ab omnis magnam. dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. Est deserunt animi qui pariatur atque non nisi sint. Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut   modi qui libero laborum ab omnis magnam. Mizara is a React JS Developer is a developer or engineer who can build both the front end and the back end of a website.",
+                    image: "nodejs-images/developer4.png"
+                },
+                {
+                    name: "David Brown",
+                    title: "Backend Developer",
+                    location: "Austin, USA",
+                    experience: "8+ year experience",
+                    expertise: ["Node JS", "Express", "MongoDB"],
+                    description: "Mizara is a React JS Developer is a developer or engineer who can build both the front end and the back end of a website. The front end (the parts of a website a user sees and interacts with) and the back end (the behind-the-scenes data storage and processing) require different skill sets. Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut   modi qui libero laborum ab omnis magnam. dolor ut quasi voluptatem! Sed molestias animi ad quos modi qui libero laborum ab omnis magnam. Est deserunt animi qui pariatur atque non nisi sint. Lorem ipsum dolor sit amet. Non commodi aliquam qui voluptatem dignissimos sed modi nihil aut   modi qui libero laborum ab omnis magnam. Mizara is a React JS Developer is a developer or engineer who can build both the front end and the back end of a website.",
+                    image: "nodejs-images/developer1.png"
+                }
+            ];
+
+            const developerList = document.getElementById('nodejs-developerList');
+    const developerDetails = document.getElementById('nodejs-developerDetails');
+    const developerTabs = document.getElementById('nodejs-developerTabs');
+
+    function displayDeveloperList(role = 'all') {
+        developerList.innerHTML = '';
+        developers.forEach((developer, index) => {
+            if (role === 'all' || developer.title.includes(role)) {
+                const listItem = document.createElement('a');
+                listItem.classList.add('list-group-item', 'list-group-item-action', 'nodejs-list-group-item');
+                listItem.href = '#';
+                listItem.dataset.index = index;
+                listItem.innerHTML = `
+                    <div class="developerlist-maindiv">
+                        <img src="${developer.image}" alt="${developer.name}" class="developerlist-image">
+                        <p class="developerlist-name">${developer.name}</P>
+                    </div>
+                    <p class="developer-title">${developer.title}</p>
+                `;
+                listItem.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    document.querySelectorAll('.nodejs-list-group-item').forEach(item => item.classList.remove('selected-item'));
+                    event.currentTarget.classList.add('selected-item');
+                    displayDeveloperDetails(event.currentTarget.dataset.index);
+                });
+                developerList.appendChild(listItem);
+            }
+        });
+        // Select the first developer item by default
+        if (developerList.firstChild) {
+            developerList.firstChild.classList.add('selected-item');
+            displayDeveloperDetails(developerList.firstChild.dataset.index);
+        }
+    }
+
+    function displayDeveloperDetails(index) {
+        const developer = developers[index];
+        developerDetails.innerHTML = `
+            <div class="d-flex align-items-center mb-3">
+                <img src="${developer.image}" alt="${developer.name}" class="nodejs-developer-details-profile">
+                <div>
+                    <h5>${developer.name}</h5>
+                    <p class="nodejs-developer-details-title">${developer.title}</p>
+                    <p class="nodejs-developer-details-location"><i class="fas fa-map-marker-alt"></i> ${developer.location} | <i class="fas fa-briefcase"></i> ${developer.experience}</p>
+                </div>
+            </div>
+            <h6 class="mt-4">Expertise In:</h6>
+            <p class="Expertise-heading">${developer.expertise.join(' | ')}</p>
+            <p class="Expertise-description">${developer.description}</p>
+            <button class="btn nodejs-button">Hire ${developer.title} <span class="nodejs-button-arrow">→</span></button>
+        `;
+        // On mobile, move the developer details below the selected item
+        if (window.innerWidth <= 767) {
+            const selectedItem = document.querySelector('.selected-item');
+            selectedItem.parentNode.insertBefore(developerDetails, selectedItem.nextSibling);
+            developerDetails.classList.add('mobile-visible');
+        }
+    }
+
+    developerTabs.addEventListener('click', function (event) {
+        if (event.target.classList.contains('nodejs-nav-link')) {
+            document.querySelectorAll('.nodejs-nav-link').forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+            const role = event.target.getAttribute('data-role');
+            displayDeveloperList(role);
+        }
+    });
+
+    // Initialize with the default role 'all'
+    displayDeveloperList('all');
+});
+    </script>
+
+    <!-- Bootstrap JS and dependencies -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jqu||ery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
